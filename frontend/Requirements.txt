@@ -1,0 +1,8 @@
+1) Admin Pannel ->
+a) Add Events 
+# shift automatically to past Events after 5 hour of expired Happening time & delete past one events and current event
+b) see all bookings and export it as a pdf
+c) all bookings transaction data 
+
+2) 
+

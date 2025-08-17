@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./button";
+import safarnamaLogo from "@/assets/logo.png";
 
-const Navbar = () => {
+// NavbarProps interface define karein
+interface NavbarProps {
+  onBookNowClick: () => void; // Naya prop for scrolling
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onBookNowClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -14,16 +20,27 @@ const Navbar = () => {
     { name: "Help", path: "/help" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path; // path type specified
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo and Name */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-              Safarnama
+            <img
+              src={safarnamaLogo}
+              alt="Safarnama Logo"
+              className="h-9 w-auto"
+            />
+            {/* Split "Safarnama" for different colors */}
+            <div className="text-2xl font-bold">
+              <span className="bg-gradient-to-r from-[#f39c12] to-[#b85c38] bg-clip-text text-transparent">
+                SAFAR
+              </span>
+              <span className="bg-gradient-to-r from-[#f39c12] to-[#e67e22] bg-clip-text text-transparent">
+                NAMA
+              </span>
             </div>
           </Link>
 
@@ -36,8 +53,8 @@ const Navbar = () => {
                   to={item.path}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(item.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-gray-700 hover:text-primary hover:bg-primary/5"
+                      ? "text-[#2c3e50] bg-gray-200"
+                      : "text-gray-700 hover:text-[#b85c38] hover:bg-gray-100"
                   }`}
                 >
                   {item.name}
@@ -47,17 +64,21 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="adventure" size="sm">
-              Book NOW !
+          {/* <div className="hidden md:block">
+            <Button
+              className="bg-[#b85c38] hover:bg-[#a15031] text-white"
+              size="sm"
+              onClick={onBookNowClick} // onBookNowClick prop use kiya
+            >
+              Book NOW!
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#f39c12]"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -104,8 +125,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   isActive(item.path)
-                    ? "text-primary bg-primary/10"
-                    : "text-gray-700 hover:text-primary hover:bg-primary/5"
+                    ? "text-[#2c3e50] bg-gray-200"
+                    : "text-gray-700 hover:text-[#b85c38] hover:bg-gray-100"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -113,9 +134,17 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="pt-2">
-              <Button variant="adventure" size="sm" className="w-full">
+              {/* <Button
+                className="w-full bg-[#b85c38] hover:bg-[#a15031] text-white"
+                size="sm"
+                onClick={() => {
+                  // onBookNowClick prop use kiya for mobile button
+                  onBookNowClick();
+                  setIsMenuOpen(false); // Mobile menu close karein after click
+                }}
+              >
                 Book Now
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

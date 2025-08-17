@@ -8,19 +8,24 @@ export interface Event {
   femaleFee: number;
   facilities: string[];
   distance: string;
-  trekType: 'Easy' | 'Moderate' | 'Hard';
+  trekType: "Easy" | "Moderate" | "Hard";
   description: string;
+  priceMale: number;
+  priceFemale: number;
+  whatsappGroupJoiningLink: string;
+  meetingPointMapLink: string;
 }
 
 export interface Booking {
-  id: string;
+  id?: string;
   eventId: string;
   name: string;
-  gender: 'Male' | 'Female';
+  email: string;
+  age: number;
   whatsapp: string;
   people: number;
-  payAfterEvent: boolean;
-  createdAt: string;
+  joinedWhatsappGroup: boolean;
+  createdAt?: string;
 }
 
 export interface TeamMember {

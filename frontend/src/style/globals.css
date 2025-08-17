@@ -1,0 +1,23 @@
+/* src/styles/globals.css (Example, agar koi custom CSS ho) */
+
+/* Add any custom global styles here */
+/* For example, if you have a custom font or base styles */
+
+/* Example for custom card gradient, if not handled by Tailwind config */
+.bg-gradient-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  }
+  
+  /* Custom button variant example (if not defined in tailwind.config.js) */
+  .btn-adventure {
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    border-radius: 0.5rem; /* rounded-md */
+    padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    font-weight: 600; /* font-semibold */
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-adventure:hover {
+    background-color: #2563eb; /* Blue-600 */
+  }

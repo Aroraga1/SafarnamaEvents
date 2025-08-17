@@ -1,8 +1,12 @@
-1) Admin Pannel ->
+1) Team Pannel ->
 a) Add Events 
 # shift automatically to past Events after 5 hour of expired Happening time & delete past one events and current event
-b) see all bookings and export it as a pdf
+b) see all bookings and export it as a pdf (Admin)
 c) all bookings transaction data 
+d) add new events pictures & data
+e) collected rupees mark to the list
+f) members details save on mongo, and delete after automatically download at night
+
+
 
 2) 
-

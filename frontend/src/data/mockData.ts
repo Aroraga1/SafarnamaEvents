@@ -1,261 +1,341 @@
-import { Event, TeamMember, FAQ, Review, GalleryImage } from "@/types";
-
-export const upcomingEvents: Event[] = [
+// src/data/mockData.js
+export const upcomingEvents = [
   {
-    id: "1",
-    name: "Himalayan Trek Adventure",
-    image: "https://larissadening.com/wp-content/uploads/2017/05/VNSW7.jpg",
-    location: "Manali, Himachal Pradesh",
-    date: "2024-08-15",
-    maleFee: 2500,
-    femaleFee: 2200,
+    id: "up1",
+    name: "Spiti Valley Expedition",
+    location: "Himachal Pradesh",
+    date: "2025-09-01",
+    maleFee: 18000,
+    femaleFee: 17500,
+    image: "https://placehold.co/1280x720/6A8270/D2F8D6?text=Spiti+Valley",
+    distance: "500 km",
+    trekType: "Hard" as const,
     facilities: [
-      "Professional Guide",
-      "Camping Equipment",
+      "Accommodation",
       "Meals",
+      "Guide",
+      "Transportation",
       "First Aid",
     ],
-    distance: "25km",
-    trekType: "Moderate",
     description:
-      "Experience the breathtaking beauty of the Himalayas with our expert guides.",
+      "Experience the breathtaking beauty of Spiti Valley with our expert guides. This challenging trek will take you through some of the most stunning landscapes in the Himalayas.",
   },
   {
-    id: "2",
-    name: "Goa Beach Party Weekend",
-    image: "/placeholder.svg",
-    location: "North Goa",
-    date: "2024-08-22",
-    maleFee: 3500,
-    femaleFee: 3200,
-    facilities: [
-      "Beach Resort Stay",
-      "DJ Night",
-      "Water Sports",
-      "Buffet Meals",
-    ],
+    id: "up2",
+    name: "Rishikesh Rafting & Camping",
+    location: "Uttarakhand",
+    date: "2025-08-10",
+    maleFee: 4500,
+    femaleFee: 4200,
+    image: "https://placehold.co/1280x720/4B5D6B/C2D0D8?text=Rishikesh+Rafting",
     distance: "N/A",
-    trekType: "Easy",
+    trekType: "Easy" as const,
+    facilities: ["Rafting Gear", "Camping", "Bonfire", "Meals"],
     description:
-      "Unwind at the pristine beaches of Goa with music, dance and endless fun!",
+      "Perfect for beginners! Enjoy white water rafting in Rishikesh followed by camping under the stars.",
   },
   {
-    id: "3",
-    name: "Rajasthan Desert Safari",
-    image: "/placeholder.svg",
-    location: "Jaisalmer, Rajasthan",
-    date: "2024-09-05",
-    maleFee: 4000,
-    femaleFee: 3800,
-    facilities: [
-      "Camel Safari",
-      "Desert Camping",
-      "Folk Music",
-      "Traditional Meals",
-    ],
-    distance: "15km",
-    trekType: "Easy",
-    description: "Discover the golden dunes and rich culture of Rajasthan!",
+    id: "up3",
+    name: "Leh Ladakh Bike Trip",
+    location: "Jammu & Kashmir",
+    date: "2025-09-15",
+    maleFee: 25000,
+    femaleFee: 24000,
+    image: "https://placehold.co/1280x720/A69B8A/F0EFEF?text=Leh+Ladakh+Bike",
+    distance: "1200 km",
+    trekType: "Moderate" as const,
+    facilities: ["Bike Rental", "Fuel", "Accommodation", "Mechanic Support"],
+    description:
+      "Embark on an epic motorcycle journey through the stunning landscapes of Ladakh. Experience the highest motorable passes in the world.",
   },
 ];
 
-export const pastEvents: Event[] = [
+export const pastEvents = [
   {
-    id: "4",
-    name: "Pondicherry Pool Party",
-    image: "/placeholder.svg",
-    location: "Pondicherry",
-    date: "2024-07-10",
-    maleFee: 2000,
-    femaleFee: 1800,
-    facilities: ["Pool Access", "DJ", "Snacks", "Photography"],
+    id: "past1",
+    name: "Chadar Trek",
+    location: "Ladakh",
+    date: "2024-01-20",
+    image: "https://placehold.co/1280x720/8B4513/FFF8DC?text=Chadar+Trek",
+    description:
+      "An incredible walk on the frozen Zanskar river, an experience of a lifetime!",
+    trekType: "Hard" as const,
+    maleFee: 35000,
+    femaleFee: 34000,
     distance: "N/A",
-    trekType: "Easy",
-    description: "An amazing pool party experience with great vibes!",
+    facilities: [
+      "Accommodation",
+      "Meals",
+      "Guide",
+      "Transportation",
+      "First Aid",
+    ],
   },
   {
-    id: "5",
-    name: "Western Ghats Trek",
-    image: "/placeholder.svg",
-    location: "Kodaikanal, Tamil Nadu",
-    date: "2024-06-20",
-    maleFee: 2800,
-    femaleFee: 2500,
-    facilities: ["Trekking Guide", "Camping", "Bonfire", "Meals"],
-    distance: "18km",
-    trekType: "Hard",
-    description: "Challenging trek through the scenic Western Ghats!",
-  },
-];
-
-export const teamMembers: TeamMember[] = [
-  {
-    id: "1",
-    name: "Rahul Sharma",
-    role: "Founder & Trek Leader",
-    image: "/placeholder.svg",
-    bio: "Adventure enthusiast with 8+ years of trekking experience across India.",
-  },
-  {
-    id: "2",
-    name: "Priya Patel",
-    role: "Event Coordinator",
-    image: "/placeholder.svg",
-    bio: "Expert in organizing memorable events and ensuring customer satisfaction.",
-  },
-  {
-    id: "3",
-    name: "Arjun Singh",
-    role: "Safety Officer",
-    image: "/placeholder.svg",
-    bio: "Certified mountaineer focused on safety protocols and emergency response.",
+    id: "past2",
+    name: "Goa Beach Fest",
+    location: "Goa",
+    date: "2023-12-30",
+    image: "https://placehold.co/1280x720/FFD700/800000?text=Goa+Fest",
+    description:
+      "New Year's Eve celebration by the beach with amazing music and vibes.",
+    trekType: "Easy" as const,
+    maleFee: 8000,
+    femaleFee: 7500,
+    distance: "N/A",
+    facilities: ["Accommodation", "Beach Access", "Party", "Meals"],
   },
 ];
 
-export const faqs: FAQ[] = [
+export const reviews = [
   {
-    id: "1",
-    question: "What should I bring for treks?",
-    answer:
-      "We provide a detailed packing list after booking. Generally, bring comfortable trekking shoes, warm clothes, personal medications, and basic toiletries.",
-  },
-  {
-    id: "2",
-    question: "Are your events safe for solo travelers?",
-    answer:
-      "Absolutely! We prioritize safety and have experienced guides. Many of our participants are solo travelers who make great friends during the journey.",
-  },
-  {
-    id: "3",
-    question: "What if weather conditions are bad?",
-    answer:
-      "We monitor weather closely and may reschedule events for safety. Full refunds or rescheduling options are provided in such cases.",
-  },
-  {
-    id: "4",
-    question: "Can I get a refund if I cancel?",
-    answer:
-      "Yes, refunds are available based on our cancellation policy. Earlier cancellations get higher refund percentages.",
-  },
-];
-
-export const reviews: Review[] = [
-  {
-    id: "1",
-    name: "Sneha Kumar",
+    id: "r1",
+    name: "Anjali Mehta",
     rating: 5,
     comment:
-      "Amazing experience! The trek was well-organized and the guides were fantastic. Definitely booking again!",
-    image: "/placeholder.svg",
-    eventName: "Himalayan Trek Adventure",
+      "The Spiti Valley trip was beyond amazing! Safarnama's team was super supportive.",
+    eventName: "Spiti Valley Expedition",
+    image: "https://randomuser.me/api/portraits/women/1.jpg",
   },
   {
-    id: "2",
-    name: "Vikram Joshi",
-    rating: 5,
-    comment:
-      "Goa trip was absolutely incredible! Great organization, awesome people, and unforgettable memories.",
-    eventName: "Goa Beach Party Weekend",
-  },
-  {
-    id: "3",
-    name: "Anita Reddy",
+    id: "r2",
+    name: "Vikram Singh",
     rating: 4,
     comment:
-      "Professional team and beautiful locations. Had a wonderful time with new friends!",
-    eventName: "Western Ghats Trek",
+      "Rishikesh rafting was thrilling! Great experience, though food could be better.",
+    eventName: "Rishikesh Rafting & Camping",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+  },
+  {
+    id: "r3",
+    name: "Sneha Sharma",
+    rating: 5,
+    comment:
+      "Leh Ladakh bike trip was a dream come true. Flawless planning and execution!",
+    eventName: "Leh Ladakh Bike Trip",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
   },
 ];
 
-export const galleryImages: GalleryImage[] = [
-  {
-    id: "1",
-    url: "/placeholder.svg",
-    category: "Treks",
-    title: "Mountain Sunrise",
-    eventName: "Himalayan Trek Adventure",
-  },
-  {
-    id: "2",
-    url: "/placeholder.svg",
-    category: "Parties",
-    title: "Beach Vibes",
-    eventName: "Goa Beach Party Weekend",
-  },
-  {
-    id: "3",
-    url: "/placeholder.svg",
-    category: "Desert",
-    title: "Golden Dunes",
-    eventName: "Rajasthan Desert Safari",
-  },
-  {
-    id: "4",
-    url: "/placeholder.svg",
-    category: "Treks",
-    title: "Forest Trail",
-    eventName: "Western Ghats Trek",
-  },
-];
+
+// mockData.ts (or mockData.js depending on your setup)
 
 export const services = [
   {
-    id: "1",
-    name: "Pool Parties",
-    description:
-      "Fun-filled pool parties with DJ, games, and unlimited entertainment",
-    icon: "🏊‍♂️",
-    category: "Chill",
+    "id": "1",
+    "name": "Mountain Adventure",
+    "category": "Adventure",
+    "description": "Explore the majestic mountain ranges with guided tours, scenic hikes, and adrenaline-packed adventures.",
+    "icon": "🏞️"
   },
   {
-    id: "2",
-    name: "Occasional Parties",
-    description: "Special event celebrations - birthdays, festivals, and more",
-    icon: "🎉",
-    category: "Chill",
+    "id": "2",
+    "name": "Beach Relaxation",
+    "category": "Chill",
+    "description": "Enjoy a calm and serene beach vacation, with activities like yoga, beach lounging, and sunset views.",
+    "icon": "🏖️"
   },
   {
-    id: "3",
-    name: "Easy Treks",
-    description: "Beginner-friendly treks perfect for first-time adventurers",
-    icon: "🥾",
-    category: "Adventure",
+    "id": "3",
+    "name": "Custom Luxury Getaway",
+    "category": "Custom",
+    "description": "Create your dream vacation with fully customized experiences, from private jets to personal chefs.",
+    "icon": "✈️"
   },
   {
-    id: "4",
-    name: "Moderate Treks",
-    description: "Challenging treks for experienced hikers seeking adventure",
-    icon: "⛰️",
-    category: "Adventure",
+    "id": "4",
+    "name": "Desert Safari",
+    "category": "Adventure",
+    "description": "An exhilarating journey through the desert, featuring dune bashing, camel rides, and stargazing.",
+    "icon": "🏜️"
   },
   {
-    id: "5",
-    name: "Hard Treks",
-    description: "Extreme adventures for seasoned trekkers and mountaineers",
-    icon: "🏔️",
-    category: "Adventure",
+    "id": "5",
+    "name": "Forest Retreat",
+    "category": "Chill",
+    "description": "Immerse yourself in the quiet and peaceful forest, ideal for hiking, meditation, and wildlife spotting.",
+    "icon": "🌲"
   },
   {
-    id: "6",
-    name: "Long Trips",
-    description:
-      "Multi-day journeys to explore distant and exotic destinations",
-    icon: "🚐",
-    category: "Adventure",
+    "id": "6",
+    "name": "Island Escapade",
+    "category": "Adventure",
+    "description": "Set sail for a tropical island adventure, with water sports, wildlife excursions, and breathtaking views.",
+    "icon": "🏝️"
   },
   {
-    id: "7",
-    name: "Private Getaways",
-    description:
-      "Customized trips for couples, families, or close friend groups",
-    icon: "🏖️",
-    category: "Custom",
+    "id": "7",
+    "name": "Private Yacht Experience",
+    "category": "Custom",
+    "description": "Charter a private yacht and sail away into the sunset with a personalized luxury cruise experience.",
+    "icon": "⛵"
   },
   {
-    id: "8",
-    name: "Adventure Nights",
-    description: "Overnight camping, bonfires, and stargazing experiences",
-    icon: "🔥",
-    category: "Adventure",
+    "id": "8",
+    "name": "Mountain Lodge Getaway",
+    "category": "Chill",
+    "description": "Unwind in a cozy mountain lodge with hot springs, scenic views, and gourmet dining.",
+    "icon": "🏔️"
+  }
+];
+
+
+
+// mockData.ts (or mockData.js depending on your setup)
+
+export const galleryImages = [
+  {
+    "id": "1",
+    "title": "Mountain Sunrise",
+    "eventName": "Alpine Adventure",
+    "category": "Adventure",
+    "url": "https://tse4.mm.bing.net/th/id/OIP.E1delhseDwaoupHYV_2GRQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
+  {
+    "id": "2",
+    "title": "Beach Vibes",
+    "eventName": "Tropical Getaway",
+    "category": "Chill",
+    "url": "https://as1.ftcdn.net/v2/jpg/02/45/68/40/1000_F_245684006_e55tOria5okQtKmiLLbY30NgEHTIB0Og.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Desert Safari",
+    "eventName": "Desert Expedition",
+    "category": "Adventure",
+    "url": "https://monkeysandmountains.com/wp-content/uploads/2019/09/monkey-sand-mountains-adventure-travel-trekking-and-hiking-tours-4.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Forest Retreat",
+    "eventName": "Nature Escape",
+    "category": "Chill",
+    "url": "https://cdn.thecrazytourist.com/wp-content/uploads/2019/03/ccimage-shutterstock_366801260.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Luxury Yacht",
+    "eventName": "Exclusive Cruise",
+    "category": "Custom",
+    "url": "https://notednames.com/ImgStoriesBig/The-Best-Himalayan-Treks-in-India---Explore-the-Majestic-Beauty-of-the-Mountains_@o@.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Sky Diving Adventure",
+    "eventName": "Thrill Seekers",
+    "category": "Adventure",
+    "url": "https://tse3.mm.bing.net/th/id/OIP.VmpfQhFuFcSDdZJpvNKVxwHaEY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": "7",
+    "title": "Private Island",
+    "eventName": "Island Escape",
+    "category": "Custom",
+    "url": "https://images.saymedia-content.com/.image/t_share/MTg3MTg3MzQ2NTIzODI2MDYx/why-you-should-travel-to-the-mountains.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Sunset Over the Ocean",
+    "eventName": "Tropical Retreat",
+    "category": "Chill",
+    "url": "https://pick-kart.com/wp-content/uploads/2021/11/Mountains.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Mountain Peaks",
+    "eventName": "Peak Adventure",
+    "category": "Adventure",
+    "url": "hhttps://resize.indiatvnews.com/en/resize/newbucket/1200_-/2018/05/solo-traveller-and-mountains-in-europe-1527585993.jpg"
+  },
+  {
+    "id": "10",
+    "title": "Winter Wonderland",
+    "eventName": "Snowy Escape",
+    "category": "Chill",
+    "url": "https://mountaintravels.com/wp-content/uploads/2020/01/slide-7.jpg"
+  }
+];
+
+
+
+// Path: src/data/mockData.js
+export const faqs = [
+  {
+    "id": "item-1",
+    "question": "What if im travelling solo?",
+    "answer": "It's not just the quastion, although its the opportunity which we commits that you come solo but can't go alone cause the loving people those you would get as friends."
+  },
+  {
+    "id": "item-2",
+    "question": "What's the Refund policy?",
+    "answer": "You can cancel it anytime if not possible to join, just in case you did not get our services."
+  },
+  {
+    "id": "item-3",
+    "question": "Is there any physical or help related safety available?",
+    "answer": "Ofcourse, we do have proper medical kit, engaging and helping teamp members with female guid to help out comfirtablly, still we always try to ahead with full of safty."
+  },
+  {
+    "id": "item-4",
+    "question": "How to Book the track & join?",
+    "answer": "Its so easy to Register you even with your friends to register at once by just filling up small details about you on the home page of our this website's, just scroll it and book your slot!"
+  },
+  {
+    "id": "item-5",
+    "question": "Is something Importent to know before coming to track?",
+    "answer": "For eqach track you have to borrow a water bottle & tracking/sport shoes with comfirtable wear and next to it depends on you like face mask & all."
+  },
+  {
+    "id": "item-5",
+    "quastion": "Are Girls safe on tracks even a solo girl?",
+    "answar": "Absalutelly even solo girls so feel safe here with our carring, helping, enjoying team & trackers as lovely nature with female guide & lot girls trackers"
+  }
+];
+
+
+
+// Path: src/data/mockData.js
+export const teamMembers = [
+  {
+    "id": "member-1",
+    "name": "Arjun Sharma",
+    "role": "Chief Explorer (CEO)",
+    "image": "https://monkeysandmountains.com/wp-content/uploads/2019/09/monkey-sand-mountains-adventure-travel-trekking-and-hiking-tours-4.jpg", // Add actual image paths
+    "bio": "Arjun founded Safarnama with a vision to make adventure accessible to everyone. He's passionate about trekking and exploring new cultures."
+  },
+  {
+    "id": "member-2",
+    "name": "Priya Singh",
+    "role": "Experience Architect (COO)",
+    "image": "https://monkeysandmountains.com/wp-content/uploads/2019/09/monkey-sand-mountains-adventure-travel-trekking-and-hiking-tours-4.jpg",
+    "bio": "Priya designs our unique itineraries, ensuring every trip is a perfect blend of thrill and comfort. She's our go-to person for seamless adventures."
+  },
+  {
+    "id": "member-3",
+    "name": "Rahul Kumar",
+    "role": "Logistics Maestro (Operations Head)",
+    "image": "/images/rahul_kumar.jpg",
+    "bio": "Rahul manages all the on-ground logistics, making sure everything runs smoothly from start to finish. He's a pro at problem-solving."
+  },
+  {
+    "id": "member-4",
+    "name": "Neha Gupta",
+    "role": "Community Builder (Marketing Lead)",
+    "image": "/images/neha_gupta.jpg",
+    "bio": "Neha connects with our adventurous community and shares the Safarnama story. She loves fostering a sense of belonging among travelers."
+  },
+  {
+    "id": "member-5",
+    "name": "Vikram Desai",
+    "role": "Wilderness Guide (Lead Guide)",
+    "image": "/images/vikram_desai.jpg",
+    "bio": "Vikram is our most experienced guide, leading challenging treks and expeditions. His knowledge of the mountains is unmatched."
+  },
+  {
+    "id": "member-6",
+    "name": "Sara Khan",
+    "role": "Travel Storyteller (Content Creator)",
+    "image": "/images/sara_khan.jpg",
+    "bio": "Sara captures the magic of our trips through her lens and words, inspiring others to embark on their own Safarnama."
+  }
 ];

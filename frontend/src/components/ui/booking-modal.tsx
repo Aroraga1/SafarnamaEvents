@@ -125,7 +125,12 @@ const BookingModal = ({ event, children }: BookingModalProps) => {
     };
 
     try {
-      await axios.post(`/api/bookings/${event._id || event.id}`, booking);
+      await axios.post(
+        `https://safarnama-events.vercel.app/api/bookings/${
+          event._id || event.id
+        }`,
+        booking
+      );
 
       // On successful booking, show confirmation view
       setIsBooked(true);

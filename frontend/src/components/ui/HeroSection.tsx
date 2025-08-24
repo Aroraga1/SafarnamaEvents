@@ -1,29 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-
+import grppic from "/other/grp.jpg";
 interface HeroSectionProps {
   // heroImage prop ab use nahi hoga, slides array use hoga
   onBookTrekClick: () => void; // Naya prop to handle scrolling to the target component (now also used by the scroll indicator)
 }
 
 const slides = [
-  { type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4" }, // Replace with your video URL
+  // { type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4" }, // Replace with your video URL
   {
     type: "image",
-    src: "https://placehold.co/1920x1080/FFD700/000000?text=Adventure+1",
+    src: grppic,
   },
-  {
-    type: "image",
-    src: "https://placehold.co/1920x1080/ADFF2F/000000?text=Adventure+2",
-  },
-  {
-    type: "image",
-    src: "https://placehold.co/1920x1080/87CEEB/000000?text=Adventure+3",
-  },
-  {
-    type: "image",
-    src: "https://placehold.co/1920x1080/FF6347/000000?text=Adventure+4",
-  },
+  // {
+  //   type: "image",
+  //   src: "https://placehold.co/1920x1080/ADFF2F/000000?text=Adventure+2",
+  // },
+  // {
+  //   type: "image",
+  //   src: "https://placehold.co/1920x1080/87CEEB/000000?text=Adventure+3",
+  // },
+  // {
+  //   type: "image",
+  //   src: "https://placehold.co/1920x1080/FF6347/000000?text=Adventure+4",
+  // },
 ];
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onBookTrekClick }) => {

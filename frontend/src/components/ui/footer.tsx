@@ -111,7 +111,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <div className="space-y-2 text-gray-300">
               <p>📧 Info@safarnamaevents.in</p>
-              <p>📞 +917823033131</p>
+              <p>📞 +919462388706</p>
               {/* <p>📞 +91 7073986290</p> */}
               <p>📍 Jaipur, Rajasthan</p>
               <p>📱 @safarnama.officials</p>

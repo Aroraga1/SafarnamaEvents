@@ -29,7 +29,7 @@ const Help = () => {
   const whatsappMessage = encodeURIComponent(
     "Hi Safarnama! I have a question about your trips and events. Could you please help me?"
   );
-  const whatsappUrl = `https://wa.me/919876543210?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/+919462388706?text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2c3e50]/10 to-[#f39c12]/10">
@@ -52,28 +52,26 @@ const Help = () => {
               Frequently Asked Questions
             </h2>
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map(
-                (
-                  faq
-                ) => (
-                  <AccordionItem
-                    key={faq.id}
-                    value={faq.id}
-                    className="bg-white rounded-lg border-0 shadow-sm"
-                  >
-                    <AccordionTrigger className="px-6 py-4 text-left hover:no-underline hover:bg-muted/50 rounded-lg">
-                      <span className="font-medium text-[#2c3e50]">{faq.question}</span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                )
-              )}
+              {faqs.map((faq) => (
+                <AccordionItem
+                  key={faq.id}
+                  value={faq.id}
+                  className="bg-white rounded-lg border-0 shadow-sm"
+                >
+                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline hover:bg-muted/50 rounded-lg">
+                    <span className="font-medium text-[#2c3e50]">
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
-      
+
         {/* Additional Resources */}
         <div className="mt-16 text-center">
           <h2 className="text-3xl font-bold text-[#2c3e50] mb-8">
@@ -85,7 +83,9 @@ const Help = () => {
                 <Card className="bg-gray-100 border-0 hover:shadow-xl transition-all duration-300 cursor-pointer">
                   <CardHeader>
                     <div className="text-3xl mb-2">📋</div>
-                    <CardTitle className="text-[#2c3e50]">Instructions or Guidance</CardTitle>
+                    <CardTitle className="text-[#2c3e50]">
+                      Instructions or Guidance
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription>
@@ -125,7 +125,9 @@ const Help = () => {
               <Card className="bg-gray-100 border-0 hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <div className="text-3xl mb-2">💬</div>
-                  <CardTitle className="text-[#2c3e50]">WhatsApp Help</CardTitle>
+                  <CardTitle className="text-[#2c3e50]">
+                    WhatsApp Help
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
@@ -150,7 +152,7 @@ const Help = () => {
                 <Button
                   variant="outline"
                   className="w-full mt-4"
-                  onClick={() => window.open("tel:+919876543210")}
+                  onClick={() => window.open("tel:+919462388706")}
                 >
                   Call Now
                 </Button>

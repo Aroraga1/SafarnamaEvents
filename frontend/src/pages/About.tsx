@@ -8,10 +8,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-// import tarun from "@/public/tarun.jpeg";
-import mukesh from "/other/mukesh.jpg";
+import mukesh from "/other/mukesh1.jpg";
 import kashif from "/other/kashif.jpg";
+import tarun from "/other/tarun.png";
 import insta from "/other/instagram.png";
+import myImage from "/other/garvit.jpg";
+// import linkedin from "/other/linkedin.png";
+// import whatsapp from "/other/whatsapp.png";
+// import gmail from "/other/gmail.png";
 
 // Custom AnimatedCounter component
 const AnimatedCounter = ({ endValue, duration = 2000 }) => {
@@ -57,7 +61,7 @@ const teamMembers = [
     id: 3,
     name: "Tarun Jangid",
     role: "Founder & Sr. Trek Leader",
-    image: mukesh,
+    image: tarun,
     bio: "Founder of safarnama events and a Senior Trek Leader. He personally ensures every journey is thoughtfully crafted, well-organized, and full of memories you will cherish for life.",
   },
 ];
@@ -173,7 +177,7 @@ const About = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-80 object-cover rounded-t-lg mx-auto"
+                  className="w-full h-80 object-auto rounded-t-lg mx-auto"
                 />
                 <Card className="bg-gray-100 border-0 hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-t-none">
                   <CardHeader>
@@ -194,10 +198,88 @@ const About = () => {
               </div>
             ))}
           </div>
+
+          {/* Your Profile Section (Newly Added) */}
+          <div className="mt-16 text-center">
+            <h2 className="text-3xl font-bold text-[#2c3e50] mb-8">
+              Meet The Developer
+            </h2>
+            <Card className="w-full max-w-2xl mx-auto rounded-lg shadow-xl border-0 p-6 bg-gradient-to-br from-white/80 to-gray-100/80">
+              <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+                <img
+                  src={myImage}
+                  alt="Garvit Arora"
+                  className="w-48 object-cover rounded-2xl shadow-md"
+                />
+
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-[#2c3e50]">
+                    Garvit Arora
+                  </h3>
+                  <Badge
+                    variant="secondary"
+                    className="mx-auto md:mx-0 mt-2 w-fit text-lg bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white"
+                  >
+                    Full Stack Developer
+                  </Badge>
+                  <p className="text-muted-foreground mt-4 text-md leading-relaxed">
+                    I'm a passionate developer who loves to contribute and build
+                    impactful products. I've worked on 27+ real-world projects
+                    in various domains including AI, Full-Stack, Java, UI/UX,
+                    and more. Currently, I'm exploring AI Agents. I'm a friendly
+                    and open-minded guy who's always up for a chat and sharing
+                    knowledge. Feel free to connect!
+                  </p>
+                  <div className="flex justify-center md:justify-start space-x-4 mt-4">
+                    <a
+                      href="https://www.linkedin.com/in/garvitarora1805"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png"
+                        alt="LinkedIn"
+                        className="w-8 h-8 opacity-70 hover:opacity-100 transition-opacity"
+                      />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/aroraga1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={insta}
+                        alt="Instagram"
+                        className="w-8 h-8 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                      />
+                    </a>
+                    <a
+                      href="https://wa.me/918955273002"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="https://static.vecteezy.com/system/resources/previews/021/495/946/original/whatsapp-logo-icon-free-png.png"
+                        alt="WhatsApp"
+                        className="w-8 h-8 opacity-70 hover:opacity-100 transition-opacity"
+                      />
+                    </a>
+                    <a href="mailto:aroragarvit1805@gmail.com">
+                      <img
+                        src="https://www.freepnglogos.com/uploads/gmail-email-logo-png-16.png"
+                        alt="Email"
+                        className="w-8 h-8 opacity-70 hover:opacity-100 transition-opacity"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
 
         {/* Contact Section */}
-        <div className="bg-gradient-to-r from-[#2c3e50] to-[#b85c38] rounded-2xl p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-[#2c3e50] to-[#b85c38] rounded-2xl p-8 text-white text-center mt-16">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Adventure?
           </h2>
@@ -214,7 +296,7 @@ const About = () => {
             <div className="bg-white/10 rounded-lg p-4">
               <div className="text-2xl mb-2">📞</div>
               <p className="font-medium">Phone</p>
-              <p className="text-sm opacity-90">+91 98765 43210</p>
+              <p className="text-sm opacity-90">+919462388706</p>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
               <img

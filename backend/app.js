@@ -13,6 +13,7 @@ const eachBooking = require("./routes/EachData");
 const patchEvent = require("./routes/pathEvent");
 const updateCurr = require("./routes/updateCurr");
 const connectDB = require("./config/db");
+const { log } = require("console");
 
 // Connect to MongoDB here, before handling routes.
 connectDB();
@@ -56,4 +57,5 @@ app.use((err, req, res, next) => {
 
 // `app.listen()` ko hata diya gaya hai.
 // Ab app ko export kiya ja raha hai, jisse Vercel ise as a serverless function chala sake.
-module.exports = app;
+app.listen(3000, () => console.log("done"));
+// module.exports = app;

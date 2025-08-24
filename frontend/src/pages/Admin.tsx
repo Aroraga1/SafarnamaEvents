@@ -14,7 +14,7 @@ import {
 // Admin Panel Components
 import AuthCard from "../admin/components/AuthCard";
 import ActiveEventsList from "../admin/components/ActiveEventsList";
-import EventForm from "../admin/components/EventForm"; // For "Add new Event"
+import EventForm from "../admin/components/EventForm";
 import BookingSummary from "../admin/components/BookingSummary";
 import BookingDetailPage from "../admin/components/BookingDetailPage";
 
@@ -23,7 +23,7 @@ import { addEvent as addEventApi } from "../admin/api/events";
 
 const Admin = ({ events }) => {
   const { events: allEvents, upcomingEvents } = events;
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [event, setEvent] = useState(events);
   const [bookings, setBookings] = useState([]);
@@ -31,23 +31,22 @@ const Admin = ({ events }) => {
   const [showBookingDetails, setShowBookingDetails] = useState(false);
   const { toast } = useToast();
 
-  // const handleLogin = () => {
-  //   if (password === "safarnama123") {
-  //     setIsAuthenticated(true);
-  //     toast({
-  //       title: "Login Successful",
-  //       description: "Welcome to Safarnama Admin Panel",
-  //     });
-  //   } else {
-  //     toast({
-  //       title: "Access Denied",
-  //       description: "Incorrect password",
-  //       variant: "destructive",
-  //     });
-  //   }
-  // };
+  const handleLogin = () => {
+    if (password === "safarnama123") {
+      setIsAuthenticated(true);
+      toast({
+        title: "Login Successful",
+        description: "Welcome to Safarnama Admin Panel",
+      });
+    } else {
+      toast({
+        title: "Access Denied",
+        description: "Incorrect password",
+        variant: "destructive",
+      });
+    }
+  };
 
-  // This function is now simplified, as EventForm directly calls the API
   const handleEventAdded = (newEventData) => {
     setEvents((prevEvents) => [...prevEvents, newEventData]);
     setActiveTab("dashboard");
@@ -66,14 +65,16 @@ const Admin = ({ events }) => {
     });
   };
 
-  // if (showBookingDetails) {
-  //   return (
-  //     <BookingDetailPage
-  //       event={{ events, upcomingEvents }}
-  //       onBack={() => setShowBookingDetails(false)}
-  //     />
-  //   );
-  // }
+  // Conditional Rendering
+  if (!isAuthenticated) {
+    return (
+      <AuthCard
+        password={password}
+        setPassword={setPassword}
+        handleLogin={handleLogin}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2c3e50]/10 to-[#f39c12]/10">

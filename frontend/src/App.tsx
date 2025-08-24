@@ -147,9 +147,9 @@ const App = () => {
               {loading && (
                 <div className="text-center p-4">Loading more events...</div>
               )}
-              {error && (
+              {/* {error && (
                 <div className="text-center p-4 text-red-500">{error}</div>
-              )}
+              )} */}
               <div className="flex justify-center p-4">
                 {/* <button
                   onClick={() => setPage((prevPage) => prevPage + 1)}

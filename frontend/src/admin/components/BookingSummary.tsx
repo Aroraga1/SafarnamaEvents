@@ -21,7 +21,7 @@ const BookingSummary = ({ events }) => {
   //   const fetchBookings = async () => {
   //     try {
   //       const response = await axios.get(
-  //         "http://localhost:3000/admin/bookings"
+  //         "${import.meta.env.REACT_BACKENDURL}/admin/bookings"
   //       );
   //       setBookings(response.data);
   //     } catch (error) {

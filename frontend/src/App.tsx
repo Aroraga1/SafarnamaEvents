@@ -45,7 +45,7 @@ const App = () => {
         // Make a GET request to the API with pagination parameters
         // The backend should be configured to handle 'page' and 'limit' query params
         const response = await axios.get(
-          `http://localhost:3000/api/events?page=${page}&limit=10`
+          `${import.meta.env.REACT_BACKENDURL}/api/events?page=${page}&limit=10`
         );
         // Append the new events to the existing events array
         setEvents((prevEvents) => [...prevEvents, ...response.data]);

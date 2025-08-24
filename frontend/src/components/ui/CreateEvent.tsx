@@ -1,19 +1,27 @@
-import React, { useState, useCallback, useRef } from 'react';
-import axios from 'axios'; // Import Axios
+import React, { useState, useCallback, useRef } from "react";
+import axios from "axios"; // Import Axios
 // Lucide-React icons ko directly import karne ke liye path sahi karo
 // Agar aapne lucide-react install kiya hai, toh yeh imports sahi kaam karenge
-import { Upload, MapPin, Tag, DollarSign, List, Image as ImageIcon, Loader2 } from 'lucide-react';
+import {
+  Upload,
+  MapPin,
+  Tag,
+  DollarSign,
+  List,
+  Image as ImageIcon,
+  Loader2,
+} from "lucide-react";
 
 const App = () => {
-  const [eventName, setEventName] = useState('');
-  const [location, setLocation] = useState('');
-  const [facilities, setFacilities] = useState('');
-  const [eventType, setEventType] = useState(''); // Corresponds to 'type' in backend
-  const [rupee, setRupee] = useState('');
+  const [eventName, setEventName] = useState("");
+  const [location, setLocation] = useState("");
+  const [facilities, setFacilities] = useState("");
+  const [eventType, setEventType] = useState(""); // Corresponds to 'type' in backend
+  const [rupee, setRupee] = useState("");
   const [files, setFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
+  const [message, setMessage] = useState({ type: "", text: "" });
 
   const fileInputRef = useRef(null);
 
@@ -22,7 +30,7 @@ const App = () => {
       const newFilesArray = Array.from(newFiles);
       // Optional: Add a check for file size or type if needed
       setFiles((prevFiles) => [...prevFiles, ...newFilesArray]);
-      setMessage({ type: '', text: '' });
+      setMessage({ type: "", text: "" });
     }
   };
 
@@ -53,59 +61,76 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage({ type: '', text: '' });
+    setMessage({ type: "", text: "" });
 
     const formData = new FormData();
-    formData.append('name', eventName);
-    formData.append('location', location);
-    formData.append('facilities', facilities);
-    formData.append('type', eventType); // Ensure this matches your backend schema field name
-    formData.append('rupee', rupee);     // Ensure this matches your backend schema field name
+    formData.append("name", eventName);
+    formData.append("location", location);
+    formData.append("facilities", facilities);
+    formData.append("type", eventType); // Ensure this matches your backend schema field name
+    formData.append("rupee", rupee); // Ensure this matches your backend schema field name
 
     files.forEach((file) => {
-      formData.append('images', file); // 'images' should match your Multer field name
+      formData.append("images", file); // 'images' should match your Multer field name
     });
 
     try {
       // Use axios.post instead of fetch
-      const response = await axios.post('http://localhost:3000/admin/addEvent', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data', // Axios sets this automatically for FormData, but good to be explicit
-        },
-      });
+      const response = await axios.post(
+        "${import.meta.env.REACT_BACKENDURL}/admin/addEvent",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data", // Axios sets this automatically for FormData, but good to be explicit
+          },
+        }
+      );
 
       // Axios wraps the response data in `response.data`
-      if (response.status === 200 || response.status === 201) { // Check for success status codes
-        setMessage({ type: 'success', text: response.data.message || 'Event added successfully!' });
+      if (response.status === 200 || response.status === 201) {
+        // Check for success status codes
+        setMessage({
+          type: "success",
+          text: response.data.message || "Event added successfully!",
+        });
         // Clear form fields
-        setEventName('');
-        setLocation('');
-        setFacilities('');
-        setEventType('');
-        setRupee('');
+        setEventName("");
+        setLocation("");
+        setFacilities("");
+        setEventType("");
+        setRupee("");
         setFiles([]);
       } else {
         // This block might not be reached if Axios throws an error for non-2xx statuses
         // Axios handles non-2xx responses as errors, caught in the catch block
-        setMessage({ type: 'error', text: response.data.message || 'Failed to add event.' });
+        setMessage({
+          type: "error",
+          text: response.data.message || "Failed to add event.",
+        });
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       // Axios error handling: `error.response` contains the server's response
       if (error.response) {
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
-        setMessage({ type: 'error', text: error.response.data.message || 'Failed to add event.' });
-        console.error('Server response data:', error.response.data);
-        console.error('Server response status:', error.response.status);
+        setMessage({
+          type: "error",
+          text: error.response.data.message || "Failed to add event.",
+        });
+        console.error("Server response data:", error.response.data);
+        console.error("Server response status:", error.response.status);
       } else if (error.request) {
         // The request was made but no response was received
-        setMessage({ type: 'error', text: 'No response from server. Check network connection.' });
-        console.error('No response received:', error.request);
+        setMessage({
+          type: "error",
+          text: "No response from server. Check network connection.",
+        });
+        console.error("No response received:", error.request);
       } else {
         // Something else happened in setting up the request that triggered an Error
-        setMessage({ type: 'error', text: 'Error setting up request.' });
-        console.error('Request setup error:', error.message);
+        setMessage({ type: "error", text: "Error setting up request." });
+        console.error("Request setup error:", error.message);
       }
     } finally {
       setLoading(false);
@@ -122,7 +147,10 @@ const App = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Event Name */}
           <div>
-            <label htmlFor="eventName" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="eventName"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Event Name
             </label>
             <div className="relative rounded-md shadow-sm">
@@ -143,7 +171,10 @@ const App = () => {
 
           {/* Location */}
           <div>
-            <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="location"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Location
             </label>
             <div className="relative rounded-md shadow-sm">
@@ -164,7 +195,10 @@ const App = () => {
 
           {/* Facilities */}
           <div>
-            <label htmlFor="facilities" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="facilities"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Facilities (e.g., Parking, Food Stalls)
             </label>
             <div className="relative rounded-md shadow-sm">
@@ -184,7 +218,10 @@ const App = () => {
 
           {/* Event Type */}
           <div>
-            <label htmlFor="eventType" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="eventType"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Event Type
             </label>
             <div className="relative rounded-md shadow-sm">
@@ -205,7 +242,10 @@ const App = () => {
 
           {/* Rupee (Cost) */}
           <div>
-            <label htmlFor="rupee" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="rupee"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Cost (in INR)
             </label>
             <div className="relative rounded-md shadow-sm">
@@ -227,7 +267,11 @@ const App = () => {
           {/* Drag and Drop Area */}
           <div
             className={`mt-6 flex justify-center rounded-lg border-2 border-dashed px-6 py-10 transition duration-300 ease-in-out
-              ${isDragging ? 'border-indigo-500 bg-indigo-50' : 'border-gray-300 bg-gray-50'}`}
+              ${
+                isDragging
+                  ? "border-indigo-500 bg-indigo-50"
+                  : "border-gray-300 bg-gray-50"
+              }`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
@@ -254,20 +298,29 @@ const App = () => {
                 </label>
                 <p className="pl-1">or drag and drop</p>
               </div>
-              <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 5MB per file</p>
+              <p className="text-xs leading-5 text-gray-600">
+                PNG, JPG, GIF up to 5MB per file
+              </p>
             </div>
           </div>
 
           {/* File Previews */}
           {files.length > 0 && (
             <div className="mt-4">
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Selected Files:</h3>
+              <h3 className="text-sm font-medium text-gray-700 mb-2">
+                Selected Files:
+              </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {files.map((file, index) => (
-                  <li key={index} className="relative flex items-center justify-between p-2 border border-gray-200 rounded-md bg-white shadow-sm">
+                  <li
+                    key={index}
+                    className="relative flex items-center justify-between p-2 border border-gray-200 rounded-md bg-white shadow-sm"
+                  >
                     <div className="flex items-center">
                       <ImageIcon className="h-5 w-5 text-indigo-500 mr-2" />
-                      <span className="text-sm text-gray-800 truncate">{file.name}</span>
+                      <span className="text-sm text-gray-800 truncate">
+                        {file.name}
+                      </span>
                     </div>
                     <button
                       type="button"
@@ -296,7 +349,7 @@ const App = () => {
                   Adding Event...
                 </>
               ) : (
-                'Add Event'
+                "Add Event"
               )}
             </button>
           </div>
@@ -305,7 +358,9 @@ const App = () => {
           {message.text && (
             <div
               className={`mt-4 p-3 rounded-md text-center text-sm ${
-                message.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                message.type === "success"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-red-100 text-red-800"
               }`}
             >
               {message.text}

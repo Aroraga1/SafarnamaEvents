@@ -51,7 +51,7 @@ const BookingDetailsPage: React.FC = () => {
         setLoading(true);
         // Backend se saari bookings fetch karein
         const response = await axios.get(
-          "http://localhost:3000/admin/bookings"
+          "${import.meta.env.REACT_BACKENDURL}/admin/bookings"
         );
         let allBookings = response.data;
 
@@ -105,7 +105,9 @@ const BookingDetailsPage: React.FC = () => {
             try {
               // Backend se booking delete karein
               await axios.delete(
-                `http://localhost:3000/admin/bookings/${bookingIdToDelete}`
+                `${
+                  import.meta.env.REACT_BACKENDURL
+                }/admin/bookings/${bookingIdToDelete}`
               );
               console.log(`Booking ${bookingIdToDelete} deleted successfully.`);
             } catch (deleteError) {

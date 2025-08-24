@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Backend server ka base URL. Isse apne actual server URL se replace kar dena.
 // Jaise agar tumhara server 'http://localhost:5000' par chal raha hai.
-const API_BASE_URL = "http://localhost:3000/admin";
+const API_BASE_URL = "${import.meta.env.REACT_BACKENDURL}/admin";
 
 /**
  * Adds a new event to the backend server, including event details and image files.
@@ -51,4 +51,4 @@ export const addEvent = async (formData, onUploadProgress) => {
 // Tum yahan future mein aur API functions add kar sakte ho, jaise:
 // export const getEvents = async () => { /* ... */ };
 // export const updateEvent = async (id, data) => { /* ... */ };
-// export const deleteEvent = async (id) => { /* ... */ };  
+// export const deleteEvent = async (id) => { /* ... */ };

@@ -1,26 +1,22 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3000/admin";
+const API_BASE_URL = "${import.meta.env.REACT_BACKENDURL}/admin";
 
 export const addEvent = async (formData, onUploadProgress) => {
   try {
-    const response = await axios.post(
-      `${API_BASE_URL}/addEvent`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / progressEvent.total
-          );
-          if (onUploadProgress) {
-            onUploadProgress(percentCompleted);
-          }
-        },
-      }
-    );
+    const response = await axios.post(`${API_BASE_URL}/addEvent`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+      onUploadProgress: (progressEvent) => {
+        const percentCompleted = Math.round(
+          (progressEvent.loaded * 100) / progressEvent.total
+        );
+        if (onUploadProgress) {
+          onUploadProgress(percentCompleted);
+        }
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("API Error adding event:", error);

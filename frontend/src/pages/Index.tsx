@@ -19,6 +19,7 @@ import CallToActionSection from "@/components/ui/CallToActionSection";
 //   priceMale: number;
 //   priceFemale: number;
 // }
+//
 
 const Index = ({ events }) => {
   const { events: allEvents, upcomingEvents, pastEvents } = events;

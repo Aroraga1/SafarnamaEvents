@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import tarun from "@/assets/tarun.jpeg";
 import mukesh from "@/assets/mukesh.jpg";
 import kashif from "@/assets/kashif.jpg";
-import insta from "@/assets/instagram.png";
+// import insta from "@/assets/instagram.png";
 
 // Custom AnimatedCounter component
 const AnimatedCounter = ({ endValue, duration = 2000 }) => {
@@ -57,7 +57,7 @@ const teamMembers = [
     id: 3,
     name: "Tarun Jangid",
     role: "Founder & Sr. Trek Leader",
-    image: tarun,
+    image: mukesh,
     bio: "Founder of safarnama events and a Senior Trek Leader. He personally ensures every journey is thoughtfully crafted, well-organized, and full of memories you will cherish for life.",
   },
 ];

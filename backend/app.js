@@ -28,11 +28,11 @@ app.use(
   })
 );
 
-const uploadDir = path.join(__dirname, "uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-  console.log(`Created 'uploads' directory at ${uploadDir}`);
-}
+// const uploadDir = path.join(__dirname, "uploads");
+// if (!fs.existsSync(uploadDir)) {
+//   fs.mkdirSync(uploadDir);
+//   console.log(`Created 'uploads' directory at ${uploadDir}`);
+// }
 
 app.use("/admin", adminRoutes);
 app.use("/admin", allBookings);

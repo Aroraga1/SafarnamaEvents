@@ -9,9 +9,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 // import tarun from "@/public/tarun.jpeg";
-import mukesh from "../../public/other/mukesh.jpg";
-import kashif from "../../public/other/kashif.jpg";
-import insta from "../../public/other/instagram.png";
+import mukesh from "/other/mukesh.jpg";
+import kashif from "/other/kashif.jpg";
+import insta from "/other/instagram.png";
 
 // Custom AnimatedCounter component
 const AnimatedCounter = ({ endValue, duration = 2000 }) => {

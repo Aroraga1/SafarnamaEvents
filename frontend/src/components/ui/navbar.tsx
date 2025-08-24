@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./button";
-import safarnamaLogo from "../../../public/other/logo.png";
+import safarnamaLogo from "/other/logo.png";
 
 // NavbarProps interface define karein
 interface NavbarProps {

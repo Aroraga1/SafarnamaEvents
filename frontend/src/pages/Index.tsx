@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import moment from "moment";
 import axios from "axios";
 
-import heroImage from "../../public/other/hero-mountain.jpg";
+import heroImage from "/other/hero-mountain.jpg";
 
 import HeroSection from "@/components/ui/HeroSection";
 import NextEventHighlight from "@/components/ui/NextEventHighlight";

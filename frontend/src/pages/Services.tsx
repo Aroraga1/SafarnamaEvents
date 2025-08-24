@@ -10,13 +10,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { services } from "@/data/mockData";
 import React from "react";
-import track from "../../public/services/track.jpg";
-import bikes from "../../public/services/bikes.jpeg";
-import event from "../../public/services/event.jpg";
-import night from "../../public/services/night.jpg";
-import tour from "../../public/services/tour.jpg";
-import privatetrack from "../../public/services/privatetrack.jpg";
-import cyclothon from "../../public/services/cyclothon.jpeg";
+import track from "/services/track.jpg";
+import bikes from "/services/bikes.jpeg";
+import event from "/services/event.jpg";
+import night from "/services/night.jpg";
+import tour from "/services/tour.jpg";
+import privatetrack from "/services/privatetrack.jpg";
+import cyclothon from "/services/cyclothon.jpeg";
 
 const servicesData = [
   {

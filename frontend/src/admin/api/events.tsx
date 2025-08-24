@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "${import.meta.env.REACT_BACKENDURL}/admin";
+const API_BASE_URL = "http://localhost:3000/admin";
 
 export const addEvent = async (formData, onUploadProgress) => {
   try {

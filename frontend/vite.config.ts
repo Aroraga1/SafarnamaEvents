@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     proxy: {
       "/api": {
         // Express server ke port par target kiya
-        target: "${import.meta.env.REACT_BACKENDURL}",
+        target: "http://localhost:3000",
         changeOrigin: true,
         // rewrite rule hataya taaki path intact rahe
       },

@@ -77,7 +77,7 @@ const App = () => {
     try {
       // Use axios.post instead of fetch
       const response = await axios.post(
-        "${import.meta.env.REACT_BACKENDURL}/admin/addEvent",
+        "http://localhost:3000/admin/addEvent",
         formData,
         {
           headers: {

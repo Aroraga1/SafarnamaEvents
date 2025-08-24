@@ -51,7 +51,7 @@ const BookingDetailsPage: React.FC = () => {
         setLoading(true);
         // Backend se saari bookings fetch karein
         const response = await axios.get(
-          "${import.meta.env.REACT_BACKENDURL}/admin/bookings"
+          "http://localhost:3000/admin/bookings"
         );
         let allBookings = response.data;
 

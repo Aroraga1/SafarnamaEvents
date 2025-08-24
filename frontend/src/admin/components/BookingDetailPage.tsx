@@ -51,7 +51,7 @@ const BookingDetailsPage: React.FC = () => {
         setLoading(true);
         // Backend se saari bookings fetch karein
         const response = await axios.get(
-          "http://localhost:3000/admin/bookings"
+          "https://safarnama-events.vercel.app/admin/bookings"
         );
         let allBookings = response.data;
 

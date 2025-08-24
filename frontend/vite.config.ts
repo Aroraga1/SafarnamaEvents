@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     proxy: {
       "/api": {
         // Express server ke port par target kiya
-        target: "http://localhost:3000",
+        target: "https://safarnama-events.vercel.app",
         changeOrigin: true,
         // rewrite rule hataya taaki path intact rahe
       },

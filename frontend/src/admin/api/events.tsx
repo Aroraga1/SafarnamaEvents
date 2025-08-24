@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3000/admin";
+const API_BASE_URL = "https://safarnama-events.vercel.app/admin";
 
 export const addEvent = async (formData, onUploadProgress) => {
   try {

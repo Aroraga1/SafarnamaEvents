@@ -25,7 +25,7 @@ import { Upload, Image as ImageIcon, Loader2 } from "lucide-react";
 const CLOUDINARY_CLOUD_NAME = "dac03md1s";
 const CLOUDINARY_UPLOAD_PRESET = "safarnama";
 const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
-const API_BASE_URL = "http://localhost:3000/admin";
+const API_BASE_URL = "https://safarnama-events.vercel.app/admin";
 
 const EventForm = ({ events, onEventAdded, setEvents }) => {
   const [newEvent, setNewEvent] = useState({

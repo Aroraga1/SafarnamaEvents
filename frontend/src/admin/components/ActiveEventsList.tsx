@@ -29,7 +29,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import axios from "axios";
-const API_BASE_URL = "http://localhost:3000/admin";
+const API_BASE_URL = "https://safarnama-events.vercel.app/admin";
 
 const ActiveEventsList = ({ events, onEditEvent }) => {
   const [editingEvent, setEditingEvent] = useState(null);

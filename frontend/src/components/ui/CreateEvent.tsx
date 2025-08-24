@@ -77,7 +77,7 @@ const App = () => {
     try {
       // Use axios.post instead of fetch
       const response = await axios.post(
-        "http://localhost:3000/admin/addEvent",
+        "https://safarnama-events.vercel.app/admin/addEvent",
         formData,
         {
           headers: {

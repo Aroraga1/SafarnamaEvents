@@ -21,7 +21,7 @@ const BookingSummary = ({ events }) => {
   //   const fetchBookings = async () => {
   //     try {
   //       const response = await axios.get(
-  //         "http://localhost:3000/admin/bookings"
+  //         "https://safarnama-events.vercel.app/admin/bookings"
   //       );
   //       setBookings(response.data);
   //     } catch (error) {

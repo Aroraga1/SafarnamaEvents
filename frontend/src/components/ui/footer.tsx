@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import instaLogo from "@/assets/instagram.png"; // Assuming you have an Instagram logo file
+import instaLogo from "../../../public/other/instagram.png"; // Assuming you have an Instagram logo file
 
 const Footer = () => {
   return (
